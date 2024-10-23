@@ -1,0 +1,18 @@
+<h1>Soil Moisture Monitoring Dashboard</h1>
+
+<h2>Sensors</h2>
+<ul>
+  {% for sensor in sensors %}
+  <li>{{ sensor.name }} - {{ sensor.location }}</li>
+  {% endfor %}
+</ul>
+
+<h2>Recent Moisture Readings</h2>
+<ul>
+  {% for reading in readings %}
+  <li>
+    {{ reading.sensor.name }} - {{ reading.moisture_level }}% ({{
+    reading.timestamp }})
+  </li>
+  {% endfor %}
+</ul>
